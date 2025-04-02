@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Layout with Shortcut Highlight</title>
+  <h1 class="page-title">키보드 단축키 가이드</h1>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* 키보드 전체 레이아웃 */
+    .keyboard {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 각 키 스타일 */
+    .key {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      background-color: #444;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 크기가 큰 키 */
+    .key.large {
+      width: 100px;
+    }
+
+    /* 스페이스바 */
+    .key.space {
+      width: 300px;
+    }
+
+    /* 버튼 스타일 */
+    .button-container {
+      display: flex; /* 플렉스 컨테이너로 설정 */
+      justify-content: center; /* 중앙 정렬 */
+      margin-top: 20px; /* 키보드와 버튼 사이 간격 */
+    }
+
+    .button {
+      flex: 1; /* 버튼이 균등하게 공간을 차지하도록 설정 */
+      margin: auto; /* 버튼 사이의 여백 */
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    
+    /* 키보드 내부의 행 */
+    .row {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="keyboard">
+    <!-- 첫 번째 줄: 숫자 및 기능 키 -->
+    <div class="row">
+      <div class="key">Esc</div>
+      <div class="key" id="f1-key">F1</div>
+      <div class="key" id="f2-key">F2</div>
+      <div class="key" id="f3-key">F3</div>
+      <div class="key" id="f4-key">F4</div>
+      <div class="key" id="f5-key">F5</div>
+      <div class="key" id="f6-key">F6</div>
+      <div class="key" id="f7-key">F7</div>
+      <div class="key" id="f8-key">F8</div>
+      <div class="key" id="f9-key">F9</div>
+      <div class="key" id="f10-key">F10</div>
+      <div class="key" id="f11-key">F11</div>
+      <div class="key" id="f11-key">F12</div>
+      <div class="key" id="pr-key">Prtscr</div>
+      <div class="key large" id="nl-key">NumLock</div>
+    </div>
+
+    <!-- 두 번째 줄: 숫자, 특수문자, 백스페이스 -->
+    <div class="row">
+      <div class="key">~</div>
+      <div class="key">1</div>
+      <div class="key">2</div>
+      <div class="key">3</div>
+      <div class="key">4</div>
+      <div class="key">5</div>
+      <div class="key">6</div>
+      <div class="key">7</div>
+      <div class="key">8</div>
+      <div class="key">9</div>
+      <div class="key">0</div>
+      <div class="key">-</div>
+      <div class="key">=</div>
+      <div class="key large" id="backspace">Backspace</div>
+    </div>
+
+    <!-- 세 번째 줄: Tab 및 QWERTY -->
+    <div class="row">
+      <div class="key large" id="tap-key">Tab</div>
+      <div class="key">Q</div>
+      <div class="key">W</div>
+      <div class="key" id="e-key">E</div>
+      <div class="key">R</div>
+      <div class="key">T</div>
+      <div class="key" id="y-key">Y</div>
+      <div class="key">U</div>
+      <div class="key">I</div>
+      <div class="key">O</div>
+      <div class="key" id="p-key">P</div>
+      <div class="key">[</div>
+      <div class="key">]</div>
+      <div class="key">\</div>
+    </div>
+
+    <!-- 네 번째 줄: Caps Lock 및 ASDF -->
+    <div class="row">
+      <div class="key large">Caps Lock</div>
+      <div class="key" id="a-key">A</div>
+      <div class="key" id="s-key">S</div>
+      <div class="key" id="d-key">D</div>
+      <div class="key" id="f-key">F</div>
+      <div class="key" id="g-key">G</div>
+      <div class="key">H</div>
+      <div class="key" id="j-key">J</div>
+      <div class="key">K</div>
+      <div class="key" id="l-key">L</div>
+      <div class="key">;</div>
+      <div class="key">'</div>
+      <div class="key large" id="enter">Enter</div>
+    </div>
+
+    <!-- 다섯 번째 줄: Shift 및 ZXCV -->
+    <div class="row">
+      <div class="key large">Shift</div>
+      <div class="key" id="z-key">Z</div>
+      <div class="key" id="x-key">X</div>
+      <div class="key" id="c-key">C</div> <!-- C 키에 ID 추가 -->
+      <div class="key" id="v-key">V</div> <!-- V 키에 ID 추가 -->
+      <div class="key">B</div>
+      <div class="key">N</div>
+      <div class="key">M</div>
+      <div class="key">,</div>
+      <div class="key" id=".-key">.</div>
+      <div class="key">/</div>
+      <div class="key large" id="sh-key">Shift</div>
+    </div>
+
+    <!-- 여섯 번째 줄: Ctrl, Alt 및 Space -->
+    <div class="row">
+      <div class="key large" id="ctrl">Ctrl</div> <!-- 왼쪽 Ctrl 키에 ID 추가 -->
+      <div class="key" id="fn">Fn</div>
+      <div class="key" id="win">Win</div>
+      <div class="key" id="alt">Alt</div>
+      <div class="key space" id="space">Space</div>
+      <div class="key large">Alt</div>
+      <div class="key large">Ctrl</div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>단축키 버튼 사용 가이드</h2>
+    <ul>
+      <li>💡 컴퓨터&노트북 단축키를 처음 접하거나 어려운 사람들을 위해 시각적으로 만든 페이지</li>
+      <li>🖱️ 아래 버튼을 클릭하면 해당 단축키 조합이 나와요.</li>
+      <li>✂️ 실제 누르는 순서로 색상이 바뀌어요!</li>
+    </ul>
+  </div>
+  
+
+  <!-- 버튼들 -->
+  <div class="button-container">
+    <button id="spaceBtn">스페이스바(spacebar)</button>
+    <button id="enterBtn">엔터(enter)</button>
+    <button id="backspaceBtn">지우기(backspace)</button>
+    <button id="ctrlBtn">컨트롤(ctrl)</button>
+    <button id="altBtn">알트(alt)</button>
+    <button id="shiftBtn">쉬프트(shift)</button>
+    <button id="winBtn">윈도우(window)</button>
+  </div>
+
+
+  <div class="button-container">
+    <button id="copyBtn">복사하기</button>
+    <button id="pasteBtn">붙여넣기</button>
+    <button id="exsectBtn">잘라내기</button>
+    <button id="returnBtn">실행취소</button>
+    <button id="reexecuteBtn">다시실행</button>
+    <button id="selectBtn">전체선택</button>
+    <button id="findBtn">찾기</button>
+    <button id="saveBtn">저장하기</button>
+  </div>
+
+  <div class="button-container">
+    <button id="filefindBtn">파일탐색기</button>
+    <button id="emogiBtn">이모티콘</button>
+    <button id="lockBtn">화면 잠금</button>
+    <button id="prtscrBtn">화면캡쳐</button>
+    <button id="areacapBtn">부분 캡쳐</button>
+    <button id="changeBtn">창 전환</button>
+    <button id="wallpaperBtn">바탕화면 보기</button>
+    <button id="numlockBtn">숫자키 잠금</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+<footer class="page-footer">
+  <p>Created by: HYUNMINJU | © 2025 All rights reserved</p>
+</footer>
+
+</html>
